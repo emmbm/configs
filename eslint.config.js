@@ -13,7 +13,9 @@ export default ts.config([
   ...ts.configs.strict,
   ...ts.configs.stylistic,
   {
-    ignores: ['dist/', 'build/', '.*/'],
+    ignores: ['dist/', 'build/', '.*/'], // Customize according to your project.
+  },
+  {
     plugins: {
       import: eslintPluginImport,
     },

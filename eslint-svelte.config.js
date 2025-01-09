@@ -1,9 +1,9 @@
-import eslintPluginSvelte from 'eslint-plugin-svelte';
-import ts from 'typescript-eslint';
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginSvelte from 'eslint-plugin-svelte';
 import globals from 'globals';
+import ts from 'typescript-eslint';
 
 /**
  * @type {import('eslint').Linter.Config[]}
@@ -14,7 +14,9 @@ export default ts.config([
   ...ts.configs.strict,
   ...ts.configs.stylistic,
   {
-    ignores: ['dist/', 'build/', '.*/'],
+    ignores: ['dist/', 'build/', '.*/'], // Customize according to your project.
+  },
+  {
     plugins: {
       import: eslintPluginImport,
     },
