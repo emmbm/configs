@@ -9,10 +9,12 @@ import ts from 'typescript-eslint';
  * @type {import('eslint').Linter.Config[]}
  */
 export default ts.config([
-  eslintConfigPrettier,
   js.configs.recommended,
   ...ts.configs.strict,
   ...ts.configs.stylistic,
+  ...eslintPluginSvelte.configs['flat/recommended'],
+  ...eslintPluginSvelte.configs['flat/prettier'],
+  eslintConfigPrettier,
   {
     ignores: ['dist/', 'build/', '.*/'], // Customize according to your project.
   },
@@ -41,8 +43,6 @@ export default ts.config([
       'import/no-duplicates': ['error', { 'prefer-inline': true }],
     },
   },
-  ...eslintPluginSvelte.configs['flat/recommended'],
-  ...eslintPluginSvelte.configs['flat/prettier'],
   {
     files: ['**/*.svelte'],
     languageOptions: {

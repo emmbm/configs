@@ -8,10 +8,10 @@ import ts from 'typescript-eslint';
  * @type {import('eslint').Linter.Config[]}
  */
 export default ts.config([
-  eslintConfigPrettier,
   js.configs.recommended,
   ...ts.configs.strict,
   ...ts.configs.stylistic,
+  eslintConfigPrettier,
   {
     ignores: ['dist/', 'build/', '.*/'], // Customize according to your project.
   },
