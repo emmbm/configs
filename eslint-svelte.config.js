@@ -30,16 +30,16 @@ export default ts.config([
     },
     rules: {
       curly: ['error', 'all'],
-      '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',
         { ignoreRestSiblings: true, destructuredArrayIgnorePattern: '^_' },
       ],
+      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
+      '@typescript-eslint/no-import-type-side-effects': 'error',
       'import/newline-after-import': [
         'error',
         { count: 1, exactCount: true, considerComments: true },
       ],
-      'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
       'import/no-duplicates': ['error', { 'prefer-inline': true }],
     },
   },
